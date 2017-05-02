@@ -180,8 +180,8 @@ def save(img_urls,title):
     import urllib
     if img_urls:
         try:
-            if not title.strip.find('Re:') != -1:#去除會因為'Re:'命名而無法建資料夾的狀況
-                title.strip.replace('Re:','')
+            if not title.strip().find('Re:') != -1:#去除會因為'Re:'命名而無法建資料夾的狀況
+                title.strip().replace('Re:','')
             dname = title.strip() #標題旁邊去空白
             os.makedirs(dname) #創建資料夾
             for img_url in img_urls: # 下載的時候必須是i.imgur.com  以下處理不是的
